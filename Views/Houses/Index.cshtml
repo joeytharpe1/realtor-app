@@ -1,0 +1,89 @@
+@model IEnumerable<houses.Models.House>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseBed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseIsAcres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseAcres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HousePriceRange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseBath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseBed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseIsAcres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseAcres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HousePriceRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HouseId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HouseId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HouseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
